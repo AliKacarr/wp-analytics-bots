@@ -29,14 +29,16 @@ message_text = "Merhaba"  # Gönderilecek mesaj
 - Python 3.7+
 - Chrome tarayıcısı ve `chromedriver`
 - Selenium
+- Clipboard
 
 Kurulum:
 
 ```bash
-pip install -r requirements.txt
+pip install selenium
+pip install clipboard
 ```
 
-> Not: `chromedriver` sistem PATH'ine eklenmiş olmalıdır.
+> Not: `chromedriver` sistem PATH'ine eklenmiş olmalıdır!
 
 ## 📁 Dosyalar
 
@@ -60,7 +62,7 @@ WhatsApp Web oturumunu güvenli şekilde sonlandırmak için kullanılır.
 
 ## 📌 Notlar
 
-- Scriptler Selenium kullanır. WhatsApp Web arayüzü değişirse bazı bölümlerde ufak güncellemeler gerekebilir.
+- Scriptler Selenium kullanır. `WhatsApp Web arayüzü değişirse` bazı Xpath yollarında ufak güncellemeler gerekebilir.
 - Botun çalışabilmesi için WhatsApp Web ana sayfasındaki QR kodun telefonla taratılması gerekmektedir. Tarama işleminden sonra bot ilgili sohbeti bulup otomatik olarak analiz işlemine devam eder. 
 - Her script çalışmasını tamamladıktan sonra WhatsApp Web oturumunu kapatır.
 - Bu işlemlerin başarıyla gerçekleşmesi, internet bağlantı hızınıza bağlı olarak yaklaşık 2 dakika sürebilir. Lütfen bu süreçte tarayıcıyı kapatmadan bekleyiniz.
