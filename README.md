@@ -1,14 +1,12 @@
-# 📊 Selenium WhatsApp Otomatik Anket ve Mesaj Analizi 
+# 📊 Selenium WhatsApp Otomatik Mesajlaşma ve Analiz Botu
 
-Bu repo, WhatsApp gruplarında **otomatik mesaj analizi**, **oylama**, **anket oluşturma** ve **istatistik toplama** işlemlerini kolaylaştırmak amacıyla geliştirilmiştir. Belirli bir tarih aralığında, kullanıcı mesajlarını analiz ederek sonuçları özetler.
+Bu repo, WhatsApp gruplarında **otomatik mesaj gönderme**, **anket oluşturma** ve **istatistik toplama** işlemlerini kolaylaştırmak amacıyla geliştirilmiştir.
 
 ## 🚀 Özellikler
 
-- WhatsApp Web veya masaüstü istemcisi üzerinde çalışır.
-- Belirli anahtar kelimelerle yapılan oylamaları tespit eder.
-- Otomatik olarak grup sohbetini açar ve mesajları tarar.
-- Anket gönderme ve anket sonuçlarını analiz etme özellikleri sunar.
-- Oturum sonunda güvenli çıkış sağlar.
+- WhatsApp Web veya masaüstü istemcisi üzerinde çalıştırabilirsiniz.
+- Botlar mesaj gönderme, mesajları analiz etme, anket gönderme, anket sonuçlarını analiz etme özelliklerini sunar.
+- Botlar seçilen Whatsapp grubunu açıp belirtilen işlemleri gerçekleştirir. Ardından oturumu sonlandırıp güvenli çıkış sağlar.
 
 ## 💻 Kullanım ve Yapılandırma
 
@@ -23,13 +21,14 @@ options = {
 start_datetime_str = "21:00 4/5/2025"  # saat:dakika gün/ay/yıl
 end_datetime_str = "22:10 30/5/2025"
 poll_topic = "Anket Başlığı"  # Anket analiz botu için
+message_text = "Merhaba"  # Gönderilecek mesaj
 ```
 
 ## 🛠️ Gereksinimler
 
 - Python 3.7+
-- [Selenium](https://pypi.org/project/selenium/)
 - Chrome tarayıcısı ve `chromedriver`
+- Selenium
 
 Kurulum:
 
@@ -47,18 +46,21 @@ WhatsApp Web üzerinde belirtilen gruptaki mesajları analiz eder, tarih aralı�
 ### `wp-bot-desktop.py`
 Kullanıcının masaüstü uygulamasından kopyaladığı mesajları analiz eder.
 
+### `wp-bot-oto-mesaj.py`
+Belirtilen gruba istediğiniz mesajı gönderir.
+
 ### `wp-bot-anket-olusturucu.py`
-Belirtilen gruba anket gönderir. Anket gönderimi sonrası çıkış yapar.
+Belirtilen gruba anket gönderir.
 
 ### `wp-bot-anket-istatistikleri.py`
-Gönderilmiş anketlerin sonuçlarını analiz eder.
+Gruptaki anketi bulup ankete oy verenleri analiz eder.
 
 ### `logout_whatsapp.py`
 WhatsApp Web oturumunu güvenli şekilde sonlandırmak için kullanılır.
 
 ## 📌 Notlar
 
-- Scriptler Selenium kullanır. WhatsApp Web arayüzü değişirse bazı bölümlerde güncelleme gerekebilir.
+- Scriptler Selenium kullanır. WhatsApp Web arayüzü değişirse bazı bölümlerde ufak güncellemeler gerekebilir.
 - Botun çalışabilmesi için WhatsApp Web ana sayfasındaki QR kodun telefonla taratılması gerekmektedir. Tarama işleminden sonra bot ilgili sohbeti bulup otomatik olarak analiz işlemine devam eder. 
 - Her script çalışmasını tamamladıktan sonra WhatsApp Web oturumunu kapatır.
 - Bu işlemlerin başarıyla gerçekleşmesi, internet bağlantı hızınıza bağlı olarak yaklaşık 2 dakika sürebilir. Lütfen bu süreçte tarayıcıyı kapatmadan bekleyiniz.
