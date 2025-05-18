@@ -11,7 +11,7 @@ def logout_whatsapp(driver, timeout=10):
         menu_button.click()
         # "Çıkış yap" seçeneğine tıkla
         logout_option = WebDriverWait(driver, timeout, poll_frequency=1).until(
-            EC.element_to_be_clickable((By.XPATH, '//*[@id="app"]/div/span[5]/div/ul/div/li[4]'))
+            EC.element_to_be_clickable((By.XPATH, '//*[@id="app"]/div/span[6]/div/ul/div/li[4]'))
         )
         logout_option.click()
         # "Çıkış yap" butonuna tıkla
